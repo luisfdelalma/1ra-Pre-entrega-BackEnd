@@ -1,6 +1,6 @@
 const express = require('express')
-const usersRouter = require('./routes/users.router.js')
-const petsRouter = require('./routes/pets.router.js')
+const productsRouter = require('./routes/products.router.js')
+const cartsRouter = require('./routes/carts.router.js')
 const path = require('path')
 // const handlebars = require('express-handlebars')
 
@@ -19,10 +19,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
 
 // RUTAS
-app.use("/", usersRouter)
-app.use("/", petsRouter)
+app.use("/", productsRouter)
+app.use("/", cartsRouter)
 
-//Ruta para servir el archivo index.html
+//Ruta para servir el archivo index.html 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
